@@ -1,0 +1,421 @@
+:root {
+    --text-color: #273F38;
+    --background-color: #F7EEDA;
+    --secondary-color: #273F38;
+    --third-color: #BC152E;
+    --fourth-color: #FFC858;
+    --fifth-color: #F4FDB1;
+    --accent-color: #74226C;
+    --title-color: #FFC858;
+    --text-accent-color: #F4FDB1;
+
+}
+
+h1 {
+    font-size: 90px;
+    font-family: "Archivo", monospace;
+    font-weight: 300;
+    font-size: 70px;
+}
+
+h2 {
+    color: var(--text-color);
+    font-size: 18px;
+    font-weight: 400;
+    margin: 0;
+}
+
+h3 {
+    color: var(--text-color);
+    font-size: 18px;
+    font-weight: 400;
+    margin: 0;
+}
+
+h4 {
+    color: var(--text-color);
+    font-size: 20px;
+    font-weight: 400;
+    margin: 0;
+}
+
+h5 {
+    color: var(--text-color);
+    font-size: 36px;
+    font-weight: 400;
+    margin: 0;
+}
+
+i {
+    margin: 0;
+}
+
+p {
+    color: var(--text-color);
+    font-size: 16px;
+    font-weight: 300;
+    margin: 0;
+}
+
+
+
+span {
+    color: var(--text-color);
+    font-weight: 700;
+}
+
+a,
+a:visited,
+a:hover,
+a:active {
+    color: var(--link-color);   /* all link text color */
+    text-decoration: none;      /* remove underline */
+}
+
+body {
+    background-color: var(--background-color);
+    font-family: "DM Sans", monospace;
+    padding: 0 15px;
+    margin: 0;
+}
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: var(--background-color);
+    display : flex;     /*to display navbar items horizontally*/
+    align-items: center; /*to vertically center the items*/
+    flex-direction: row; /*to ensure items are in a row*/
+    justify-content: space-between;
+    font-size: 18px;
+    font-weight: 300;
+    padding: 0;
+    height: 70px;
+}
+
+.navbar-logo img {
+    width: 80px;
+    height: auto;
+    display: block; /*to remove any extra space below the image*/
+    padding: 0;
+    margin: 0;
+}
+
+.navbar-container {
+    display: flex;  /*to display navbar items horizontally*/
+    justify-content: center; /*to center the items horizontally*/
+}
+
+.navbar-menu {
+    display: flex;  /*to display navbar items horizontally*/
+    flex-direction: row; /*to ensure items are in a row*/
+    gap: 20px;      /*to add space between navbar items*/
+    list-style: none; /*to remove default list styling*/
+    justify-content: center; /*to center the items horizontally*/
+    padding: 0;
+    margin: 0;
+}
+
+.navbar-contact {
+    min-width: 120px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 300;
+    margin: 0;
+    padding: 10px 1px;
+    border: 1px solid var(--accent-color);
+    border-radius: 100px;
+
+
+}
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 20px;
+
+    /* change image path as needed */
+    background-image: url("assets/image/hero.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.hero-content h1 {
+    margin: 0;
+    display: inline-block;                 /* wraps bg around text */
+    padding: 12px 20px;
+    background-color: var(--accent-color); /* text box color */
+    color: var(--title-color);
+    border-radius: 100px;
+    padding: 0px 50px;
+}
+
+.about{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 50px;   
+    padding-top: 100px;
+    margin-bottom: 50px;
+}
+
+.about-image {
+    flex: 2;
+    width: 400px;
+    height: auto;
+    border-radius: 20px;
+    
+    display: flex;              /* make inner img alignable */
+    justify-content: flex-end;  /* push img to right */
+    align-items: center;        /* optional vertical alignment */
+}
+
+.about-image-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.about-image img {
+    position: relative;
+    width: 50px;
+    height: auto;
+    top: 0px;                  /* reset old values */
+    right: 30px;
+    transform: translateX(-50%); /* center vertically */
+}
+
+.about-content {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+}
+
+.about-highlights {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    font-size: 24px;
+    margin-top: 24px;
+}
+
+.about-highlights h2{
+    font-family: "Archivo", monospace;
+    font-size: 32px;
+    font-weight: 600;
+}
+
+.about-CTA {
+    margin-top: 50px;
+    width: fit-content;        /* only as wide as content */
+    margin-left: auto;         /* center horizontally */
+    margin-right: auto;        /* center horizontally */
+
+    color: var(--title-color);
+    background-color: var(--secondary-color);
+    border-radius: 100px;
+
+    display: inline-flex;      /* keep content centered inside */
+    justify-content: center;
+    align-items: center;
+}
+
+.about-CTA h3 {
+    color: var(--text-accent-color);
+    font-size: 18px;
+    font-weight: 300;
+    padding: 10px 50px;
+}
+
+.commitment {
+    background-color: var(--title-color);
+    padding: 50px;
+    border-radius: 40px;
+    padding-bottom: 80px;
+}
+
+.commitment-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.commitment-title h2 {
+    display: inline-block;                 /* width = text content */
+    border: 1px solid var(--accent-color);
+    padding: 10px 50px;                     /* small inner spacing */
+    border-radius: 999px;                  /* optional pill look */
+}
+
+.commitment-container {
+    display: flex;
+    flex-direction: row;
+    gap: 70px;
+    margin-top: 30px;
+}
+
+.commitment-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+}
+
+.commitment-item img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 30px;
+}
+
+.commitment-item h4 {
+    color: var(--accent-color);
+    font-size: 18px;
+    font-weight: 300;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.featured-projects {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    margin-top: 50px;
+    border: 1px solid var(--accent-color);
+    border-radius: 40px;
+    padding: 50px;
+}
+
+
+.featured-projects-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.featured-projects-title h2 {
+    display: inline-block;                 /* width = text content */
+    background-color: var(--third-color);
+    padding: 10px 50px;                     /* small inner spacing */
+    border-radius: 999px;                  /* optional pill look */
+    color: var(--title-color);
+}
+
+.feature-projects-image-collection {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.featured-projects-image-collection-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+} 
+
+.feature-projects-image-item img {
+    width: 100%;
+    height: auto;
+}
+
+.featured-projects-CTA{
+    display: flex;
+    justify-content: center; /* keep both near center */
+    align-items: center;
+    gap: 20px;               /* exact gap in the middle */
+}
+
+.featured-projects-CTA-text{
+    flex: 0 0 auto;          /* prevent each item from taking half width */
+    width: fit-content;
+}
+
+.featured-projects-CTA-text h3 {
+    color: var(--text-color);
+    border-radius: 100px;
+    padding: 10px 50px;
+    display: inline-block;   
+    cursor: pointer;   /* only as wide as content */
+}
+
+#explore-jalan-app {
+    background-color: var(--fourth-color); /* change to any color you want */
+}
+
+#explore-projects {
+    border: 1px solid var(--secondary-color);
+}
+
+.faqs {
+    background-color: var(--fourth-color);
+    padding: 75px;
+    border-radius: 40px;
+    margin-top: 120px;
+}
+
+.faqs-title {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.faqs-title h2 {
+    display: inline-block;                 /* width = text content */
+    border: 1px solid var(--accent-color);
+    padding: 10px 50px;                     /* small inner spacing */
+    border-radius: 999px;                  /* optional pill look */
+    color: var(--text-color);
+    margin-bottom: 50px;
+}
+
+.faqs-item {
+    padding-top: 20px;
+    border-top: 1px solid var(--accent-color);
+    margin-bottom: 30px;
+}
+
+.faqs-question-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.faqs-question-container h2 {
+    font-weight: 600;
+}
+
+.faqs-answer {
+    display: none;
+}
+
+.faqs-answer .active{
+    display: block;
+}
+
+
+.contacts {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--fifth-color);
+    margin: 120px 0;
+    padding: 40px;
+    border-radius: 40px;
+}
+
+.contact-title {
+    margin: 0;
+}
+
+
+
+
+
+
