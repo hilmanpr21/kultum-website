@@ -50,12 +50,24 @@ i {
     margin: 0;
 }
 
-p {
+p{
     color: var(--text-color);
     font-size: 16px;
     font-weight: 300;
     margin: 0;
 }
+
+li{
+    color: var(--text-color);
+    font-size: 16px;
+    font-weight: 300;
+    margin: 0;
+}
+
+ul{
+    margin: 0;
+}
+
 
 
 
@@ -75,7 +87,7 @@ a:active {
 body {
     background-color: var(--background-color);
     font-family: "DM Sans", monospace;
-    padding: 0 15px;
+    padding: 0 30px;
     margin: 0;
 }
 
@@ -307,6 +319,19 @@ body {
     color: var(--title-color);
 }
 
+.feature-projects-content {
+    column-count: 3;
+    column-gap: 20px;
+}
+
+.feature-projects-content img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+
+
 .feature-projects-image-collection {
     display: flex;
     flex-direction: row;
@@ -431,10 +456,70 @@ body {
     margin-bottom: 30px;
 }
 
+.page-about .hero-about{
+    height: 80dvh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 20px;
+    margin: 0 0 10vh 0
+}
 
+.page-about .hero-about img{
+    width: auto;
+    height: 100%;
+}
 
+.page-about .about-description .about-full-description {
+   margin: 0 0 20px 0;
+}
+    
 
+.page-about .about-half-page {
+    display: flex;
+    margin: 0 0 120px 0;
+}
 
+.page-about .about-half-page .about-half-ornament {
+    flex: 1;
+    height: auto;
+    display: flex;
+    justify-content: center; /* push ornament to center horizontally */
+    align-items: center; /* center vertically */
+}
 
+.page-about .about-half-page .about-half-description {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+}
 
+.page-about .about-half-page .about-half-ornament img{
+    position: relative;
+    width: 80px;
+    height: auto;
+    top: 80px;
+    right: 0px;
+    transform: translateX(-50%);
+}
 
+.page-about .about-cta {
+    margin: 80px 0 80px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page-about .cta-button {
+    background-color: var(--text-color);
+    border-radius: 100px;
+}
+
+.page-about .cta-button h3 {
+    color: var(--fifth-color);
+    font-size: 18px;
+    font-weight: 300;
+    padding: 10px 50px;
+}
