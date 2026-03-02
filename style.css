@@ -12,10 +12,9 @@
 }
 
 h1 {
-    font-size: 90px;
+    font-size: 70px;
     font-family: "Archivo", monospace;
     font-weight: 300;
-    font-size: 70px;
 }
 
 h2 {
@@ -80,7 +79,6 @@ a,
 a:visited,
 a:hover,
 a:active {
-    color: var(--link-color);   /* all link text color */
     text-decoration: none;      /* remove underline */
 }
 
@@ -254,6 +252,11 @@ body {
     padding: 10px 50px;
 }
 
+.about-CTA h3 a{
+    color: var(--text-accent-color);
+}
+
+
 .commitment {
     background-color: var(--title-color);
     padding: 50px;
@@ -306,7 +309,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 50px;
-    margin-top: 50px;
+    margin-top: 120px;
     border: 1px solid var(--accent-color);
     border-radius: 40px;
     padding: 50px;
@@ -426,23 +429,23 @@ body {
 }
 
 .faqs-answer{
-    max-height: 0;
-    overflow: hidden;
-    opacity: 0;
-    transition: max-height 0.3s ease, opacity 0.2s ease;
+    max-height: 0;              /*collapses the answer, initially 0*/
+    overflow: hidden;           /*Precvents hidden content from showing*/
+    opacity: 0;                 /*Makes the answer invisible, initially 0*/
+    transition: max-height 0.3s ease, opacity 0.2s ease;        /*Animate when the answer opened or closed*/
 }
 
 .faqs-item.is-open .faqs-answer{
-    max-height: 500px; /* increase if some answers are longer */
-    opacity: 1;
+    max-height: 500px;          /*Allows the answer to expand to its full height when open, adjust as needed*/
+    opacity: 1;                 /*Makes the answer visible when open*/
 }
 
 .faqs-item .icon-plus{
-    transition: transform 0.2s ease;
+    transition: transform 0.2s ease;    /*Animate the rotation of the plus icon when the answer is opened or closed*/
 }
 
 .faqs-item.is-open .icon-plus{
-    transform: rotate(45deg); /* plus -> X */
+    transform: rotate(45deg);           /* + become X by rotating */
 }
 
 .plus.button{
@@ -470,6 +473,10 @@ body {
     padding: 10px 0;
     border-top: 1px solid var(--text-color);
     cursor: pointer;
+}
+
+.contact-items p a{
+    color: var(--text-color);
 }
 
 .contact-footer {
@@ -629,4 +636,190 @@ body {
     border: 1px solid var(--secondary-color);
     color: var(--text-color);
 }   
+
+
+/* ============================================
+   RESPONSIVE DESIGN
+   Breakpoints:
+   - Large desktop : > 1280px
+   - Desktop       : 993px – 1280px
+   - Tablet        : 641px – 992px
+   - Mobile        : <= 640px
+============================================ */
+
+/* ===== Global responsive base ===== */
+*, *::before, *::after {
+    box-sizing: border-box;                 /* ensures padding and border are included in element's total width and height */
+}
+
+/* ===== Large desktop (> 1280px) ===== */
+@media (min-width: 1280px) {
+    body {
+        padding: 0 100px;
+    }
+}
+
+/* ===== Desktop (993px – 1280px) ===== */
+@media (max-width: 1280px) {
+    body {
+        padding: 0 40px;
+    }
+
+    h1 {
+        font-size: clamp(2.5rem, 5vw, 4.5rem);          /* responsive font size between 2.5rem and 4.5rem based on viewport width */
+    }
+
+    .projects-item-collection {
+        gap: 40px;
+    }
+}
+
+/* ===== Tablet (641px – 992px) ===== */
+@media (max-width: 992px) {
+    /* --- Typography --- */
+    h1 { font-size: clamp(2rem, 7vw, 8.5rem); }
+    h4 { font-size: 22px; }
+    h5 { font-size: 22px; }
+
+    /* --- Body --- */
+    body {
+        padding: 0 20px;
+    }
+
+    /* --- Navbar --- */
+    .navbar {
+        flex-wrap: wrap;
+        height: auto;
+        padding: 10px 0;
+        gap: 10px;
+    }
+
+    /* --- About section (index) --- */
+    .about {
+        flex-direction: column;
+        padding-top: 60px;
+        gap: 60px;
+        text-align: center;
+    }
+
+    .about-image {
+        width: 100%;
+    }
+
+    .about-highlights {
+        text-align: center;
+    }
+
+    
+    .about-image {
+        justify-content: center;
+    }
+
+    .about-image img {
+        justify-content: center;  /* push img to center */
+        right: 0;
+        transform: translateX(0%);
+    }
+
+    /* --- Commitment --- */
+    .commitment {
+        padding: 30px;
+    }
+
+    .commitment-container {
+        flex-direction: column;
+        gap: 50px;
+        text-align: center;
+        font-size: 24px;
+    }
+
+    .commitment-item h4 {
+        font-size: 24px;  /* higher specificity - overrides h4 alone */
+    }
+
+    /* --- Featured projects content --- */
+    .featured-projects {
+        padding: 30px;
+    }
+
+    .feature-projects-content {
+        column-count: 2;
+    }
+
+    .feature-projects-image-collection {
+        display: grid;                                  /* override flex with grid */
+        grid-template-columns: repeat(2, 1fr);          /* 2 equal columns */
+        gap: 10px;
+    }
+
+    .featured-projects-CTA {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    /* --- Projects page --- */
+    .projects-item-collection {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 40px;
+    }
+
+    .page-projects .projects-item h4 {
+        min-height: 5em;   /* reserve same space for 1–2 lines */
+        margin: 0 0 0.5rem 0;
+        text-align: center;
+
+        /* limit to 3 lines with ellipsis */
+        display: -webkit-box;
+        -webkit-line-clamp: 4; /* limit to 3 lines */
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+
+        font-size: 20px;
+    }
+
+    .page-projects .our-work{
+        padding: 30px;
+    }
+
+    /* --- About page --- */
+    .page-about .hero-about{
+        height: 30dvh;
+        margin-bottom: 50px;
+    }
+
+    .page-about .hero-about img{
+        height: auto;
+        width: 100%;
+    }
+
+    .page-about .about-half-page {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .page-about .about-description {
+        text-align: center;
+    }
+
+    .page-about .about-half-page .about-half-ornament {
+        justify-content: center; /* push ornament to center horizontally */
+    }
+
+    .page-about .about-half-page .about-half-ornament img{
+        top: 0px;
+        transform: translateX(0);
+        margin: 30px 0;
+    }
+
+    .page-about .about-half-page .about-half-description {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .page-about .cta-button h3 a{
+        color: var(--fifth-color);
+    }
+
+}
+
 
