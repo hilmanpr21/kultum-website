@@ -425,14 +425,29 @@ body {
     font-weight: 600;
 }
 
-.faqs-answer {
-    display: none;
+.faqs-answer{
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.3s ease, opacity 0.2s ease;
 }
 
-.faqs-answer .active{
-    display: block;
+.faqs-item.is-open .faqs-answer{
+    max-height: 500px; /* increase if some answers are longer */
+    opacity: 1;
 }
 
+.faqs-item .icon-plus{
+    transition: transform 0.2s ease;
+}
+
+.faqs-item.is-open .icon-plus{
+    transform: rotate(45deg); /* plus -> X */
+}
+
+.plus.button{
+    cursor: pointer;
+}
 
 .contacts {
     display: flex;
