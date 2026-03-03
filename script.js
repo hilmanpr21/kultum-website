@@ -35,3 +35,24 @@ document.querySelectorAll('.faqs-item').forEach((item, i) => {
         }
     });
 });
+
+
+const burger = document.querySelector('.navbar-burger');
+const navContainer = document.querySelector('.navbar-container');
+
+if (burger && navContainer) {
+    burger.addEventListener('click', () => {
+        const isOpen = burger.classList.toggle('is-open');
+        navContainer.classList.toggle('is-open');
+        burger.setAttribute('aria-expanded', String(isOpen));
+    });
+
+    // close menu when a nav link is clicked
+    navContainer.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            burger.classList.remove('is-open');
+            navContainer.classList.remove('is-open');
+            burger.setAttribute('aria-expanded', 'false');
+        });
+    });
+}
