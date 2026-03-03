@@ -204,7 +204,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: row;
+    flex-direction: column;
     gap: 50px;   
     padding-top: 100px;
     margin-bottom: 50px;
@@ -217,7 +217,7 @@ body {
     border-radius: 20px;
     
     display: flex;              /* make inner img alignable */
-    justify-content: flex-end;  /* push img to right */
+    justify-content: center;  /* push img to center */
     align-items: center;        /* optional vertical alignment */
 }
 
@@ -228,25 +228,25 @@ body {
 }
 
 .about-image img {
-    position: relative;
     width: 50px;
     height: auto;
     top: 0px;                  /* reset old values */
-    right: 30px;
-    transform: translateX(-50%); /* center vertically */
+    right: 0px;
+    transform: translateX(0%); /* center vertically */
 }
 
 .about-content {
     flex: 3;
     display: flex;
     flex-direction: column;
+    text-align: center;
 }
 
 .about-highlights {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    text-align: left;
+    text-align: center;
     font-size: 24px;
     margin-top: 24px;
 }
@@ -528,17 +528,19 @@ body {
     height: 100%;
 }
 
-.page-about .about-description .about-full-description {
-   margin: 0 0 20px 0;
-}
-    
-
-.page-about .about-half-page {
+.page-about .about-description {
     display: flex;
+    flex-direction: column;
     margin: 0 0 120px 0;
 }
 
-.page-about .about-half-page .about-half-ornament {
+.page-about .about-half-page {
+    display: flex;
+    margin: 0 0 30px 0;
+    gap: 50px;
+}
+
+.page-about .about-half-ornament {
     flex: 1;
     height: auto;
     display: flex;
@@ -551,15 +553,13 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: left;
+    margin-bottom: 0px;
 }
 
-.page-about .about-half-page .about-half-ornament img{
-    position: relative;
+.page-about .about-half-ornament img{
     width: 80px;
     height: auto;
-    top: 80px;
-    right: 0px;
-    transform: translateX(-50%);
+    transform: translateX(0%);
 }
 
 .page-about .about-cta {
@@ -579,6 +579,10 @@ body {
     font-size: 18px;
     font-weight: 300;
     padding: 10px 50px;
+}
+
+.page-about .cta-button h3 a{
+    color: var(--fifth-color);
 }
 
 .page-projects .our-work {
