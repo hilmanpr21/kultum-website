@@ -114,8 +114,11 @@ body {
 }
 
 .navbar-container {
-    display: flex;  /*to display navbar items horizontally*/
-    justify-content: center; /*to center the items horizontally*/
+    flex: 1;                    /* fill remaining space after logo */
+    display: flex;
+    align-items: center;
+    justify-content: center;    /* center the menu links */
+    position: relative;         /* anchor for navbar-contact absolute position */
 }
 
 .navbar-menu {
@@ -137,6 +140,8 @@ body {
 }
 
 .navbar-contact {
+    position: absolute;         /* pin to right edge of container */
+    right: 0;
     min-width: 120px;
     text-align: center;
     font-size: 18px;
@@ -145,9 +150,30 @@ body {
     padding: 10px 1px;
     border: 1px solid var(--accent-color);
     border-radius: 100px;
-
-
 }
+
+.navbar-burger {
+    display: none;              /* hidden on desktop */
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    z-index: 200;
+}
+
+.navbar-burger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background-color: var(--text-color);
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.2s ease;
+}
+
+
 
 .hero {
     min-height: 100vh;
@@ -759,6 +785,10 @@ body {
     }
 
     /* --- Projects page --- */
+    .page-projects .featured-projects {
+        margin-top: 50px;
+    }
+
     .projects-item-collection {
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 40px;
@@ -784,8 +814,8 @@ body {
 
     /* --- About page --- */
     .page-about .hero-about{
-        height: 30dvh;
-        margin-bottom: 50px;
+        height: 50dvh;
+        margin-top: 50px;
     }
 
     .page-about .hero-about img{
@@ -836,6 +866,44 @@ body {
     /* --- Body --- */
     body {
         padding: 0 10px;
+    }
+
+    .navbar {
+        flex-wrap: wrap;
+        height: auto;
+        padding: 10px 0;
+        position: relative;
+    }
+
+    .navbar-burger {
+        display: flex;          /* show on mobile */
+    }
+
+    .navbar-container {
+        display: none;          /* hidden by default on mobile */
+        flex: none;             /* undo flex:1 from desktop */
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        gap: 16px;
+        padding: 20px 0;
+        border-top: 1px solid var(--accent-color);
+    }
+
+    .navbar-container.is-open {
+        display: flex;          /* show when burger is open */
+    }
+
+    .navbar-menu {
+        flex-direction: column;
+        gap: 16px;
+        width: 100%;
+    }
+
+    .navbar-contact {
+        position: static;       /* undo absolute from desktop so it flows in dropdown */
+        width: 100%;
+        text-align: center;
     }
 
     /* --- Hero --- */
