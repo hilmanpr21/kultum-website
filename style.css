@@ -79,6 +79,7 @@ a,
 a:visited,
 a:hover,
 a:active {
+    color: var(--text-color);
     text-decoration: none;      /* remove underline */
 }
 
@@ -819,7 +820,143 @@ body {
     .page-about .cta-button h3 a{
         color: var(--fifth-color);
     }
-
 }
+
+/* ===== Mobile (<= 640px) ===== */
+@media (max-width: 640px) {
+    /* --- Typography --- */
+    h1 { font-size: clamp(1.8rem, 8vw, 2.5rem); }
+    h2 { font-size: 16px; }
+    h3 { font-size: 16px; }
+    h4 { font-size: 16px; }
+    h5 { font-size: 20px; }
+    p, li { font-size: 14px; }
+    a { font-size: 16px; }
+
+    /* --- Body --- */
+    body {
+        padding: 0 10px;
+    }
+
+    /* --- Hero --- */
+    .hero {
+        min-height: 90dvh;
+        background-image: url("assets/image/hero_mobile.png");
+    }
+
+    .hero-content h1 {
+        max-width: 70vw;
+        padding: 10px 30px;
+    }
+
+    /* --- About section (index) --- */ 
+    .about {
+        padding-top: 30px;
+        gap: 30px;
+    }
+    
+    .about-highlights h2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        font-size: 20px;
+
+    }
+
+    .highlight-word,
+    .highlight-sep {
+        display: block;         /* each word and separator on its own line */
+    }
+
+    .highlight-sep {
+        line-height: 1;
+    }
+
+    /* --- Commitment --- */
+    .commitment {
+        padding: 30px 20px;
+    }
+
+    .commitment-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    /* --- Featured projects --- */
+    .featured-projects {
+        padding: 30px 20px;
+        margin-top: 60px;
+    }
+
+    .feature-projects-content {
+        column-count: 1;
+        column-gap: 20px;
+    }
+     
+    .featured-projects-CTA {
+         gap: 20px;
+     }
+
+    .featured-projects-CTA-text h3 {
+        width: 70vw;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    /* --- FAQs --- */
+    .faqs {
+        padding: 30px 20px;
+        margin-top: 60px;
+    }
+
+    /* --- Contacts --- */
+    .contacts {
+        padding: 30px 20px;
+        margin: 60px 0 30px 0;
+        text-align: center;
+    }
+
+    .contact-footer {
+        text-align: center;
+    }
+
+    .contact-footer p {
+        font-size: 16px;
+    }
+
+    /* --- Projects page --- */
+    .projects-item-collection {
+        grid-template-columns: 1fr;         /* single column */
+        gap: 50px;
+    }
+
+    .page-projects .projects-item h4 {
+        min-height: unset;   /* reserve same space for 1–2 lines */
+        margin: 0 0 0.5rem 0;
+        text-align: center;
+
+        /* remove line clamp for mobile */
+        display: block;         /* override -webkit-box */
+        -webkit-line-clamp: unset; /* limit to 3 lines */
+        overflow: visible;
+        font-size: 16px;
+    }
+
+    .page-projects .projects-item p {
+        text-align: center;
+    }
+
+    /* --- About page --- */
+    .page-about .hero-about{
+        margin-top: 30px;
+    }
+
+    .page-about .about-half-page {
+        display: flex;
+        margin: 0 0 80px 0;
+    }
+}
+
 
 
