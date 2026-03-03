@@ -679,14 +679,14 @@ body {
     box-sizing: border-box;                 /* ensures padding and border are included in element's total width and height */
 }
 
-/* ===== Large desktop (> 1280px) ===== */
-@media (min-width: 1280px) {
+/* ===== Large desktop (> 1980px) ===== */
+@media (min-width: 1980px) {
     body {
-        padding: 0 100px;
+        padding: 0 70px;
     }
 }
 
-/* ===== Desktop (993px – 1280px) ===== */
+/* ===== Desktop (993px – 1980px) ===== */
 @media (max-width: 1280px) {
     body {
         padding: 0 40px;
@@ -697,7 +697,7 @@ body {
     }
 
     .projects-item-collection {
-        gap: 40px;
+        gap: 30px;
     }
 }
 
@@ -772,6 +772,11 @@ body {
     .feature-projects-content {
         column-count: 2;
     }
+
+    .feature-projects-content a {
+        text-decoration: underline;
+    }
+
 
     .feature-projects-image-collection {
         display: grid;                                  /* override flex with grid */
@@ -872,7 +877,6 @@ body {
         flex-wrap: wrap;
         height: auto;
         padding: 10px 0;
-        position: relative;
     }
 
     .navbar-burger {
