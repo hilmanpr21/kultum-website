@@ -242,6 +242,10 @@ body {
     text-align: center;
 }
 
+.about-content-text {
+    max-width: 800px;
+}
+
 .about-highlights {
     display: flex;
     flex-direction: column;
@@ -504,6 +508,7 @@ body {
 
 .contact-items p a{
     color: var(--text-color);
+    text-decoration: underline;
 }
 
 .contact-footer {
